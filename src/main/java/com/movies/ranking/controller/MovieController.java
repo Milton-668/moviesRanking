@@ -25,11 +25,11 @@ public class MovieController {
 
     @GetMapping(path = "{id}")
     public ResponseEntity<Optional<Movie>> findById(@PathVariable Long id){
-        return ResponseEntity.ok(movieService.findById(id));
+        return ResponseEntity.ok(movieService.findByIdOrElseThrow(id));
     }
     @GetMapping(path = "/classifica/{classifica}")
     public ResponseEntity<Optional<Movie>> findByClassifica(@PathVariable String classifica){
-        return ResponseEntity.ok(movieService.findByClassifica(classifica));
+        return ResponseEntity.ok(movieService.findByClassificaOrElseThrow(classifica));
     }
 
     @PostMapping

@@ -25,12 +25,12 @@ public class MovieService {
         return movieRepository.save(movie);
     }
 
-    public Optional<Movie> findById(Long id) {
+    public Optional<Movie> findByIdOrElseThrow(Long id) {
         return Optional.ofNullable(movieRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Movie not found")));
     }
 
-    public Optional<Movie> findByClassifica(String classifica) {
+    public Optional<Movie> findByClassificaOrElseThrow(String classifica) {
         return Optional.ofNullable(movieRepository.findByClassifica(classifica))
                 .orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Classificação não encontrada"));
     }

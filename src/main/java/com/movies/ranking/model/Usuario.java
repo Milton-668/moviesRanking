@@ -1,6 +1,5 @@
 package com.movies.ranking.model;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
